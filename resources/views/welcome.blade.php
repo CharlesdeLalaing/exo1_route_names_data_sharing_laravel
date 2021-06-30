@@ -35,6 +35,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('back')}}">backend</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('home')}}">home</a>
+                        </li>
                     </ul>
                 </div>
             </div>

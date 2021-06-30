@@ -25,11 +25,72 @@ Route::get('/contact/sav', function () {
     return view('infos.contact.sav');
 })->name('sav');
 
-Route::get('/team/front', function () {
+view()->composer(['*'], function ($view) {
+    $front = [
+        'perso1' => [
+            'nom' => 'charles',
+            'fonction' => 'front',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso2' => [
+            'nom' => 'charles',
+            'fonction' => 'front',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso3' => [
+            'nom' => 'charles',
+            'fonction' => 'front',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso4' => [
+            'nom' => 'charles',
+            'fonction' => 'front',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso5' => [
+            'nom' => 'charles',
+            'fonction' => 'front',
+            'photo' => asset('images/tete.jpg')
+        ],
+    ];
+    
+    $back = [
+        'perso1' => [
+            'nom' => 'charles',
+            'fonction' => 'back',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso2' => [
+            'nom' => 'charles',
+            'fonction' => 'back',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso3' => [
+            'nom' => 'charles',
+            'fonction' => 'back',
+            'photo' => asset('images/tete.jpg')
+        ],
+        'perso4' => [
+            'nom' => 'charles',
+            'fonction' => 'back',
+            'photo' => asset('images/tete.jpg')
+        ],
+    ];
+
+    $view -> with('front', $front);
+    $view -> with('back', $back);
+});
+
+Route::get('/team/front', function () { 
     return view('team.web.dev.frontend');
 })->name('font');
 
 Route::get('/team/back', function () {
     return view('team.web.dev.backend');
 })->name('back');
+
+
+Route::get('/home', function () {
+    return view('layouts.home');
+})->name('home');
 
