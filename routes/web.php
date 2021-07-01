@@ -105,6 +105,11 @@ Route::get('/test', function () {
         (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
         (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
         (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
     ];
     return view('test', compact('frontends'));
 });
