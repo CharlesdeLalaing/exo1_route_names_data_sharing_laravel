@@ -53,7 +53,7 @@ view()->composer(['*'], function ($view) {
             'photo' => asset('images/tete.jpg')
         ],
     ];
-    
+
     $back = [
         'perso1' => [
             'nom' => 'charles',
@@ -77,11 +77,11 @@ view()->composer(['*'], function ($view) {
         ],
     ];
 
-    $view -> with('front', $front);
-    $view -> with('back', $back);
+    $view->with('front', $front);
+    $view->with('back', $back);
 });
 
-Route::get('/team/front', function () { 
+Route::get('/team/front', function () {
     return view('team.web.dev.frontend');
 })->name('font');
 
@@ -94,3 +94,27 @@ Route::get('/home', function () {
     return view('layouts.home');
 })->name('home');
 
+
+
+// coorection pour faire les importation d'object
+
+Route::get('/test', function () {
+    $frontends = [
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactus', 'fonction' => 'bg de la street', 'photo' => 'tete.jpg'],
+    ];
+    return view('test', compact('frontends'));
+});
+
+Route::get('/test2', function () {
+    $backends = [
+        (object)['nom' => 'cactusBoy', 'fonction' => 'bg de la street tu connés', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactusBoy', 'fonction' => 'bg de la street tu connés', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactusBoy', 'fonction' => 'bg de la street tu connés', 'photo' => 'tete.jpg'],
+        (object)['nom' => 'cactusBoy', 'fonction' => 'bg de la street tu connés', 'photo' => 'tete.jpg'],
+    ];
+    return view('test2', compact('backends'));
+});
